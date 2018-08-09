@@ -1,0 +1,47 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+.p-2.lokated, .p-2.date {
+    border: 1px solid #000;
+    background: #ccc;
+}
+
+.mapWrap{
+    min-height: 500px;
+}
+
+#map {
+    height: 100%;
+}
+
+.list{
+    overflow: auto;
+    height: 500px;
+    border: 1px solid #000;
+    background: #ccc;
+}
+
+.totalAmount{
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background: #ccc;
+}
+
+.cosmonaut{
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.cosmonaut i{
+    font-size: 60px;
+}
+
+.cosmonaut span{
+    margin: 0 auto;
+    line-height: 60px;
+    font-size: 25px;
+}
+
+
