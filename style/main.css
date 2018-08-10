@@ -15,7 +15,7 @@
     height: 100%;
 }
 
-.list{
+.astrosList{
     overflow: auto;
     height: 500px;
     border: 1px solid #000;
@@ -29,16 +29,16 @@
     background: #ccc;
 }
 
-.cosmonaut{
+.astros{
     border: 1px solid #000;
     border-radius: 10px;
 }
 
-.cosmonaut i{
+.astros i{
     font-size: 60px;
 }
 
-.cosmonaut span{
+.astros span{
     margin: 0 auto;
     line-height: 60px;
     font-size: 25px;

@@ -13,9 +13,11 @@
         <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+               
         <script async defer src="https://maps.googleapis.com/maps/api/js?&callback=initMap"></script>
-        <script src="scripts/googleMap.js"></script>
-        <script src="scripts/main.js"></script>
+        <script defer src="scripts/googleMap.js"></script>
+       
+        <script defer src="scripts/main.js"></script>
 
         <title>Document</title>
     </head>
@@ -27,13 +29,13 @@
                 <div class="col-md-8 p-2 ">
                     <div class="p-2 lokated">
                         <h3>ISS is now lokated at:</h3>
-                        <span>longitude: 50.1742, latitude: -41.2034</span>
+                        <span class="locationText"></span>
                     </div>
                 </div>
                 <div class="col-md-4 p-2 ">
                     <div class="p-2 date">
-                        <h3>Current UTC time: 18:40</h3>
-                        <span>Tuesday, 17 April 2018</span>
+                        <h3></h3>
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -46,14 +48,11 @@
                 </div>
 
                 <div class="col-md-4 p-2 listWrap">
-                    <div class="p-2 list p-2">
-                        <div class="cosmonaut p-2 mb-2 d-md-flex">
-                            <i class="fas fa-user-circle"></i>
-                            <span>Anton Shkaplerov</span>
-                        </div>
+                    <div class="p-2 astrosList">
+                        
                     </div>
                     <div class="p-2 totalAmount text-center">
-                        <span>Total amount: 6 people on ISS</span>
+                        <span></span>
                     </div>
                 </div>
 
