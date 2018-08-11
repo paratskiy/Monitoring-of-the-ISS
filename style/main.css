@@ -1,10 +1,6 @@
-.selector-for-some-widget {
-    box-sizing: content-box;
-}
-
-.p-2.lokated, .p-2.date {
-    border: 1px solid #000;
-    background: #ccc;
+.p-2.lokated, .p-2.date, .container {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    font-weight: 500;
 }
 
 .mapWrap{
@@ -18,30 +14,58 @@
 .astrosList{
     overflow: auto;
     height: 500px;
-    border: 1px solid #000;
-    background: #ccc;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    font-weight: 500;
 }
 
 .totalAmount{
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    background: #ccc;
+    
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    font-weight: 500;
 }
 
-.astros{
-    border: 1px solid #000;
-    border-radius: 10px;
+.astro{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    font-weight: 500;
 }
 
-.astros i{
+.astro i{
+    float: left;
     font-size: 60px;
 }
 
-.astros span{
-    margin: 0 auto;
+.astro span{
+    display: block;
+    margin: 0px auto;
     line-height: 60px;
-    font-size: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+}
+
+@media (max-width: 1200px){
+    .astro span{
+        font-size: 16px;
+    }
+
+    .date h3{
+        font-size: 20px;
+    }
 }
 
 

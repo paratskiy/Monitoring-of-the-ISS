@@ -1,35 +1,43 @@
 let locationText = document.querySelector('.locationText');
 let astrosList   = document.querySelector('.astrosList');
 let totalAmount  = document.querySelector('.totalAmount span');
-let presentTime  = document.querySelector('.date h3');
+let presentTime  = document.querySelector('.date h4');
 let presentDate  = document.querySelector('.date span');
 
-let locationData = new XMLHttpRequest();
+let locationData;
+let astrosAmount;
 
-locationData.open('GET', 'http://api.open-notify.org/iss-now.json', false);
+function getDate(){
+    locationData = new XMLHttpRequest();
 
-locationData.send();
+    locationData.open('GET', 'http://api.open-notify.org/iss-now.json', false);
 
-if (locationData.status != 200) {
-    alert(locationData.status + ': ' + locationData.statusText); 
+    locationData.send();
+
+    if (locationData.status != 200) {
+        alert(locationData.status + ': ' + locationData.statusText); 
+    }
+
+    locationData = JSON.parse(locationData.response);
+
+    astrosAmount = new XMLHttpRequest();
+
+    astrosAmount.open('GET', 'http://api.open-notify.org/astros.json', false);
+
+    astrosAmount.send();
+
+    if (astrosAmount.status != 200) {
+        alert(astrosAmount.status + ': ' + astrosAmount.statusText); 
+    }
+
+    astrosAmount = JSON.parse(astrosAmount.response);
+
+    setTimeout(getDate, 5000);
 }
-
-locationData = JSON.parse(locationData.response);
-
-let astrosAmount = new XMLHttpRequest();
-
-astrosAmount.open('GET', 'http://api.open-notify.org/astros.json', false);
-
-astrosAmount.send();
-
-if (astrosAmount.status != 200) {
-    alert(astrosAmount.status + ': ' + astrosAmount.statusText); 
-}
-
-astrosAmount = JSON.parse(astrosAmount.response);
 
 function setLocationText() {
     locationText.innerHTML = `longitude: ${locationData.iss_position.latitude}, latitude: ${locationData.iss_position.longitude}`;
+    setTimeout(setLocationText, 5050);
 }
 
 function setDate() {
@@ -45,18 +53,19 @@ function setDate() {
     
     presentTime.innerHTML = `Current UTC time: ${hour}:${min}`;
     presentDate.innerHTML = `${day}, ${date} ${month} ${year}`;
+    setTimeout(setDate, 5000);
 }
 
 function setAstros() {
 
     let amount = []
-
+    astrosList.innerHTML = '';
     for(let i = 0; i < astrosAmount.people.length; i++) {
 
         let astro = astrosAmount.people[i];
 
         let astroblock = document.createElement('div');
-        astroblock.className = ('astros p-2 mb-2 d-md-flex');
+        astroblock.className = ('astro p-2 mb-2 d-lg-flex');
 
         let avatar = document.createElement('i');
         avatar.className = ('fas fa-user-circle');
@@ -73,6 +82,7 @@ function setAstros() {
         }
     }
     totalAmount.innerHTML = `Total amount: ${amount.length} people on ISS`
+    setTimeout(setAstros, 5000);
 }
 
 function initMap() {
@@ -89,8 +99,10 @@ function initMap() {
         map: map,
         title: 'Hello World!'
     });
+    setTimeout(initMap, 5000);
 }
 
+getDate();
 setLocationText();
 setAstros();
 setDate()
