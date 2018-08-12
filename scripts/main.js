@@ -3,7 +3,7 @@ let astrosList   = document.querySelector('.astrosList');
 let totalAmount  = document.querySelector('.totalAmount span');
 let presentTime  = document.querySelector('.date h4');
 let presentDate  = document.querySelector('.date span');
-
+let icon_iss     = './img/iss.png';
 let locationData;
 let astrosAmount;
 
@@ -37,7 +37,7 @@ function getDate(){
 
 function setLocationText() {
     locationText.innerHTML = `longitude: ${locationData.iss_position.latitude}, latitude: ${locationData.iss_position.longitude}`;
-    setTimeout(setLocationText, 5050);
+    setTimeout(setLocationText, 5000);
 }
 
 function setDate() {
@@ -90,15 +90,17 @@ function initMap() {
     var myLatLng = { lat: +locationData.iss_position.latitude, lng: +locationData.iss_position.longitude };
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 3,
         center: myLatLng
     });
 
     var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Hello World!'
+        icon: icon_iss,
+        title: `longitude: ${locationData.iss_position.latitude}, latitude: ${locationData.iss_position.longitude}`
     });
+    
     setTimeout(initMap, 5000);
 }
 
@@ -106,3 +108,6 @@ getDate();
 setLocationText();
 setAstros();
 setDate()
+  
+
+  
